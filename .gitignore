@@ -1,6 +1,10 @@
 
 # Created by https://www.gitignore.io/api/macos,osx
 
+### Sass ###
+.sass-cache/
+*.css.map
+
 ### macOS ###
 *.DS_Store
 .AppleDouble
