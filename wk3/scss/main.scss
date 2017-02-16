@@ -1,0 +1,26 @@
+// Import scss partials
+
+// Vender code
+@import 'vendor/normalize';
+
+// Abstracts (tools)
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/grid';
+
+// Base
+@import 'base/base';
+@import 'base/typography';
+
+// Components
+@import 'components/buttons';
+
+// Sections
+@import 'sections/header';
+@import 'sections/trailer';
+@import 'sections/sub-trailer';
+@import 'sections/synopsis';
+@import 'sections/credits';
+@import 'sections/awards';
+@import 'sections/reviews';
+@import 'sections/footer';
