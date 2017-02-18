@@ -433,6 +433,14 @@ body {
     margin-left: auto;
     margin-right: auto; } }
 
+a {
+  color: #494949;
+  text-decoration: none; }
+
+.social {
+  list-style-type: none;
+  padding-left: 0; }
+
 html {
   font-size: 100%; }
   @media screen and (min-width: 40em) {
@@ -460,5 +468,112 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 3rem;
   text-transform: uppercase;
   letter-spacing: 4px; }
+
+header {
+  height: 400px;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 2rem; }
+  header .tickets {
+    font-family: "Teko", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 30px;
+    border-radius: 30px; }
+    header .tickets:hover {
+      background-color: #fff;
+      color: #494949;
+      transition: all 0.2s ease-in-out; }
+
+.compact-nav {
+  overflow: auto; }
+  .compact-nav::after {
+    content: "";
+    clear: both;
+    display: block; }
+  .compact-nav a {
+    float: right; }
+  @media screen and (min-width: 50em) {
+    .compact-nav {
+      display: none; } }
+
+#burger {
+  position: relative;
+  max-width: 33px;
+  height: 14px;
+  cursor: pointer;
+  z-index: 1000; }
+  @media screen and (min-width: 50em) {
+    #burger {
+      display: none; } }
+  #burger span {
+    background: #fff;
+    height: 2px;
+    width: 100%;
+    position: absolute; }
+  #burger span:first-child {
+    top: 0;
+    transition: all 0.2s ease-in-out; }
+  #burger span:nth-child(2) {
+    top: 7px;
+    transition: all 0.2s ease-in-out; }
+  #burger span:last-child {
+    top: 14px;
+    transition: all 0.2s ease-in-out; }
+  #burger.is-open span:first-child {
+    transform: translateY(7px) rotate(45deg);
+    transition: all 0.2s ease-in-out; }
+  #burger.is-open span:nth-child(2) {
+    opacity: 0;
+    transition: all 0.2s ease-in-out; }
+  #burger.is-open span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+    transition: all 0.2s ease-in-out; }
+
+.large-nav > ul, .large-nav > div {
+  display: none; }
+  @media screen and (min-width: 50em) {
+    .large-nav > ul, .large-nav > div {
+      display: block; } }
+
+#menu {
+  list-style-type: none;
+  padding-left: 0; }
+  #menu li a {
+    color: #fff; }
+    #menu li a:hover {
+      border-bottom: 2px solid #fff; }
+
+#menu.is-visible {
+  display: block; }
+
+.info-block {
+  margin-top: 5rem; }
+
+.title {
+  color: #fff;
+  font-family: "Teko", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 1rem;
+  font-weight: 400; }
+  .title div:first-child {
+    font-size: 1.2rem;
+    margin-bottom: 1rem; }
+  .title div:nth-child(2) {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: 10px;
+    text-indent: 10px; }
+  .title div:last-child {
+    font-size: 9rem;
+    line-height: 9rem;
+    letter-spacing: 35px;
+    text-indent: 35px; }
 
 /*# sourceMappingURL=main.css.map */

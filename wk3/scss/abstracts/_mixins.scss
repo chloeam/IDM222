@@ -56,3 +56,16 @@ $container-list: map-keys($container-widths);
     }
   }
 }
+
+// HELPERS
+
+@mixin classy-text {
+  font-family: $heading-type;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+@mixin no-list-style {
+  list-style-type: none;
+  padding-left: 0;
+}

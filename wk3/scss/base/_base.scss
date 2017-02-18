@@ -13,3 +13,12 @@ body {
 .container {
   @include set-container;
 }
+
+a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.social {
+  @include no-list-style;
+}

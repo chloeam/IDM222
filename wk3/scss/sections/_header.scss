@@ -1,0 +1,150 @@
+header {
+  height: 400px;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 2rem;
+
+  .tickets {
+    @include classy-text;
+    font-size: 1.2rem;
+    color: $button-text-color;
+    border: $default-line-width solid $button-text-color;
+    padding: 10px 30px;
+    border-radius: 30px;
+
+    &:hover {
+      background-color: $white;
+      color: $text-color;
+      transition: $default-transition;
+    }
+  }
+}
+
+.compact-nav {
+  overflow: auto;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  a {
+    float: right;
+  }
+
+  @include larger-than($header-breakpoint) {
+    display: none;
+  }
+}
+
+#burger {
+  position: relative;
+  max-width: 33px;
+  height: 14px;
+  cursor: pointer;
+  z-index: 1000;
+  // top: 0.7rem; // magic number
+
+  @include larger-than($header-breakpoint) {
+    display: none;
+  }
+
+  span {
+    background: $white;
+    height: $default-line-width;
+    width: 100%;
+    position: absolute;
+  }
+
+  span:first-child {
+    top: 0;
+    transition: $default-transition;
+  }
+
+  span:nth-child(2) {
+    top: 7px;
+    transition: $default-transition;
+  }
+
+  span:last-child {
+    top: 14px;
+    transition: $default-transition;
+  }
+
+  &.is-open {
+    span:first-child {
+      transform: translateY(7px) rotate(45deg);
+      transition: $default-transition;
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transition: $default-transition;
+    }
+
+    span:last-child {
+      transform: translateY(-7px) rotate(-45deg);
+      transition: $default-transition;
+    }
+  }
+}
+
+// have to target them separately for javascript reasons
+.large-nav>ul, .large-nav>div {
+  display: none;
+
+  @include larger-than($header-breakpoint) {
+    display: block;
+  }
+}
+
+#menu {
+  @include no-list-style;
+
+  li a {
+    color: $white;
+
+    &:hover {
+      border-bottom: $default-line-width solid $white;
+    }
+  }
+}
+
+#menu.is-visible {
+  display: block;
+}
+
+.info-block {
+  margin-top: 5rem;
+}
+
+.title {
+  color: $white;
+  @include classy-text;
+  text-align: center;
+  line-height: 1rem;
+  font-weight: 400;
+
+  div:first-child {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  div:nth-child(2) {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: 10px;
+    // fix weird bug where letter spacing makes text off-center
+    text-indent: 10px;
+  }
+
+  div:last-child {
+    font-size: 9rem;
+    line-height: 9rem;
+    letter-spacing: 35px;
+    // fix weird bug where letter spacing makes text off-center
+    text-indent: 35px;
+  }
+}

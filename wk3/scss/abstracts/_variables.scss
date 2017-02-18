@@ -40,11 +40,15 @@ $button-type: $heading-type;
 $heading-weight: 700;
 
 // OTHER
+
 // breakpoint at which header turns from hamburger toggle to "regular"
 $header-breakpoint: break-m;
 
 // default transition for buttons and such
 $default-transition: all 0.2s ease-in-out;
+
+// default line width in things like borders and hrs
+$default-line-width: 2px;
 
 // COLORS
 
