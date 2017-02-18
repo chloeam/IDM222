@@ -7,6 +7,7 @@ header {
 
   .tickets {
     @include classy-text;
+    cursor: pointer;  // not sure why this is needed
     font-size: 1.2rem;
     color: $button-text-color;
     border: $default-line-width solid $button-text-color;
@@ -20,6 +21,10 @@ header {
     }
   }
 
+  @include larger-than($header-breakpoint) {
+    padding-top: 0;
+  }
+
   @include larger-than(break-m) {
     height: 600px;
     background-position: left bottom;
@@ -28,6 +33,10 @@ header {
   @include larger-than(break-l) {
     height: 100vh;
   }
+}
+
+header .container {
+  max-width: 90%;
 }
 
 .compact-nav {
@@ -164,6 +173,7 @@ header {
 
   @include larger-than($header-breakpoint) {
     margin-left: 50%;
+    margin-top: 3rem;
   }
 }
 
@@ -196,7 +206,7 @@ header {
   line-height: 1rem;
   font-weight: 400;
   color: inherit;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   div:first-child {
     font-size: 1.2rem;
