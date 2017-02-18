@@ -417,7 +417,7 @@ body {
     max-width: 85%;
     margin-left: auto;
     margin-right: auto; } }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 58.75em) {
   .container {
     max-width: 80%;
     margin-left: auto;
@@ -446,7 +446,7 @@ html {
   @media screen and (min-width: 40em) {
     html {
       font-size: 100%; } }
-  @media screen and (min-width: 50em) {
+  @media screen and (min-width: 58.75em) {
     html {
       font-size: 100%; } }
   @media screen and (min-width: 64em) {
@@ -469,9 +469,13 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 4px; }
 
+.attribution {
+  text-transform: uppercase;
+  letter-spacing: 3px; }
+
 header {
   height: 400px;
-  background-image: url(../img/hero.jpg);
+  background-image: url(../img/hero-try.jpg);
   background-size: cover;
   background-position: center;
   padding-top: 2rem; }
@@ -488,6 +492,13 @@ header {
       background-color: #fff;
       color: #494949;
       transition: all 0.2s ease-in-out; }
+  @media screen and (min-width: 58.75em) {
+    header {
+      height: 600px;
+      background-position: left bottom; } }
+  @media screen and (min-width: 64em) {
+    header {
+      height: 100vh; } }
 
 .compact-nav {
   overflow: auto; }
@@ -497,7 +508,7 @@ header {
     display: block; }
   .compact-nav a {
     float: right; }
-  @media screen and (min-width: 50em) {
+  @media screen and (min-width: 58.75em) {
     .compact-nav {
       display: none; } }
 
@@ -507,7 +518,7 @@ header {
   height: 14px;
   cursor: pointer;
   z-index: 1000; }
-  @media screen and (min-width: 50em) {
+  @media screen and (min-width: 58.75em) {
     #burger {
       display: none; } }
   #burger span {
@@ -534,9 +545,26 @@ header {
     transform: translateY(-7px) rotate(-45deg);
     transition: all 0.2s ease-in-out; }
 
+.large-nav {
+  overflow: auto; }
+  .large-nav::after {
+    content: "";
+    clear: both;
+    display: block; }
+  .large-nav ul > li {
+    display: inline-block;
+    margin-right: 12px; }
+  .large-nav .tickets, .large-nav .social {
+    display: inline-block; }
+  .large-nav .social {
+    line-height: 56px; }
+
+.nav-right {
+  float: right; }
+
 .large-nav > ul, .large-nav > div {
   display: none; }
-  @media screen and (min-width: 50em) {
+  @media screen and (min-width: 58.75em) {
     .large-nav > ul, .large-nav > div {
       display: block; } }
 
@@ -547,21 +575,46 @@ header {
     color: #fff; }
     #menu li a:hover {
       border-bottom: 2px solid #fff; }
+  @media screen and (min-width: 58.75em) {
+    #menu {
+      float: left;
+      line-height: 56px; } }
 
 #menu.is-visible {
   display: block; }
 
 .info-block {
-  margin-top: 5rem; }
+  margin-top: 5rem;
+  color: #fff;
+  text-align: center; }
+  @media screen and (min-width: 58.75em) {
+    .info-block {
+      margin-left: 50%; } }
+
+.endorsement {
+  display: none; }
+  @media screen and (min-width: 58.75em) {
+    .endorsement {
+      display: block; }
+      .endorsement .stars {
+        font-size: 1.8rem;
+        letter-spacing: 7px;
+        margin: 0; }
+      .endorsement .quote-mark {
+        font-size: 4rem;
+        line-height: 40px; }
+      .endorsement .attribution {
+        font-size: 0.1rem;
+        margin: 0; } }
 
 .title {
-  color: #fff;
   font-family: "Teko", sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
-  text-align: center;
   line-height: 1rem;
-  font-weight: 400; }
+  font-weight: 400;
+  color: inherit;
+  margin-top: 2rem; }
   .title div:first-child {
     font-size: 1.2rem;
     margin-bottom: 1rem; }

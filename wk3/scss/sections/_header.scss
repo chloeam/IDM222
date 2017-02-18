@@ -1,6 +1,6 @@
 header {
   height: 400px;
-  background-image: url(../img/hero.jpg);
+  background-image: url(../img/hero-try.jpg);
   background-size: cover;
   background-position: center;
   padding-top: 2rem;
@@ -18,6 +18,15 @@ header {
       color: $text-color;
       transition: $default-transition;
     }
+  }
+
+  @include larger-than(break-m) {
+    height: 600px;
+    background-position: left bottom;
+  }
+
+  @include larger-than(break-l) {
+    height: 100vh;
   }
 }
 
@@ -91,6 +100,33 @@ header {
   }
 }
 
+.large-nav {
+  overflow: auto;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  ul>li {
+    display: inline-block;
+    margin-right: 12px;
+  }
+
+  .tickets, .social {
+    display: inline-block;
+  }
+
+  .social {
+    line-height: 56px;
+  }
+}
+
+.nav-right {
+  float: right;
+}
+
 // have to target them separately for javascript reasons
 .large-nav>ul, .large-nav>div {
   display: none;
@@ -110,6 +146,11 @@ header {
       border-bottom: $default-line-width solid $white;
     }
   }
+
+  @include larger-than($header-breakpoint) {
+    float: left;
+    line-height: 56px;
+  }
 }
 
 #menu.is-visible {
@@ -118,14 +159,44 @@ header {
 
 .info-block {
   margin-top: 5rem;
+  color: $white;
+  text-align: center;
+
+  @include larger-than($header-breakpoint) {
+    margin-left: 50%;
+  }
+}
+
+.endorsement {
+  display: none;
+
+  @include larger-than($header-breakpoint) {
+    display: block;
+
+    .stars {
+      font-size: 1.8rem;
+      letter-spacing: 7px;
+      margin: 0;
+    }
+
+    .quote-mark {
+      font-size: 4rem;
+      line-height: 40px;
+    }
+
+    .attribution {
+      font-size: 0.1rem;
+      margin: 0;
+    }
+  }
 }
 
 .title {
-  color: $white;
   @include classy-text;
-  text-align: center;
   line-height: 1rem;
   font-weight: 400;
+  color: inherit;
+  margin-top: 2rem;
 
   div:first-child {
     font-size: 1.2rem;
