@@ -1,0 +1,5 @@
+@mixin span-columns($columns) {
+  float: left;
+  $percentage: (100% / 12) * $columns;
+  width: $percentage;
+}

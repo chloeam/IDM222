@@ -11,7 +11,7 @@ header {
     font-size: 1.2rem;
     color: $button-text-color;
     border: $default-line-width solid $button-text-color;
-    padding: 10px 30px;
+    padding: 5px 30px;
     border-radius: 30px;
 
     &:hover {
@@ -23,6 +23,7 @@ header {
 
   @include larger-than($header-breakpoint) {
     padding-top: 0;
+    background-attachment: fixed;
   }
 
   @include larger-than(break-m) {

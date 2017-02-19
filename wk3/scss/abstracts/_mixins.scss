@@ -30,7 +30,6 @@ $roots: map-values($spreads);
 
 $container-list: map-keys($container-widths);
 
-// not working yet
 @mixin set-container() {
   @for $i from 1 through $number-of-breakpoints {
     $specific-width-value: map-get($container-widths, nth($container-list, $i));
@@ -39,6 +38,13 @@ $container-list: map-keys($container-widths);
       max-width: $specific-width-value;
       margin-left: auto;
       margin-right: auto;
+      overflow: auto;
+
+      &::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
     }
   }
 }
