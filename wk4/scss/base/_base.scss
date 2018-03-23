@@ -1,0 +1,22 @@
+body {
+  background-color: $background-color;
+  color: $text-color;
+  overflow-x: hidden;
+}
+
+section {
+  margin-top: 6rem;
+}
+
+.container {
+  @include set-container;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.social {
+  @include no-list-style;
+}
