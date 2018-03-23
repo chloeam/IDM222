@@ -597,6 +597,11 @@ header .container {
   .large-nav .social {
     line-height: 56px; }
 
+.social a {
+  opacity: 0.9; }
+  .social a:hover {
+    opacity: 1; }
+
 .nav-right {
   float: right; }
 
@@ -734,5 +739,37 @@ header .container {
   width: 50%;
   margin-left: 8.33333%;
   margin-top: 0; }
+
+#reviews .review {
+  float: left;
+  width: 33.33333%;
+  padding: 2rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */ }
+#reviews .attribution {
+  font-size: 0.5em;
+  letter-spacing: 2px;
+  line-height: 1rem; }
+
+footer {
+  background: #b30000; }
+  footer .tickets {
+    background: #fff;
+    padding: 5px 30px;
+    border-radius: 30px;
+    font-family: "Teko", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #b30000; }
+    footer .tickets:hover {
+      color: #fff;
+      background: #b30000;
+      transition: all 200ms ease-in-out; }
 
 /*# sourceMappingURL=main.css.map */

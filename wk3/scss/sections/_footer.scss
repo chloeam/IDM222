@@ -1,0 +1,17 @@
+footer {
+  background: $primary-color;
+
+  .tickets {
+    background: $white;
+    padding: 5px 30px;
+    border-radius: 30px;
+    @include classy-text;
+    color: $primary-color;
+
+    &:hover {
+      color: $white;
+      background: $primary-color;
+      transition: all 200ms ease-in-out;
+    }
+  }
+}

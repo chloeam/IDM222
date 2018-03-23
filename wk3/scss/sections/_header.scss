@@ -137,6 +137,14 @@ header .container {
   }
 }
 
+.social a {
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .nav-right {
   float: right;
 }

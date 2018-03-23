@@ -1,0 +1,17 @@
+#reviews {
+  .review {
+    @include span-columns(4);
+    padding: 2rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+  }
+
+  .attribution {
+    font-size: 0.5em;
+    letter-spacing: 2px;
+    line-height: 1rem;
+  }
+}
