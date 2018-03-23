@@ -1,0 +1,8 @@
+#synopsis {
+  article {
+    @include larger-than(break-s) {
+      @include span-columns(8);
+      @include push(2);
+    }
+  }
+}

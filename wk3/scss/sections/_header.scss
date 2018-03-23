@@ -120,8 +120,12 @@ header .container {
   }
 
   ul>li {
-    display: inline-block;
+    // display: inline-block;
     margin-right: 12px;
+
+    @include larger-than($header-breakpoint) {
+      display: inline-block;
+    }
   }
 
   .tickets, .social {
@@ -209,12 +213,16 @@ header .container {
   color: inherit;
   margin-top: 3rem;
 
-  div:first-child {
+  span {
+    display: block;
+  }
+
+  span:first-child {
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
 
-  div:nth-child(2) {
+  span:nth-child(2) {
     font-size: 4rem;
     line-height: 4rem;
     letter-spacing: 10px;
@@ -222,7 +230,7 @@ header .container {
     text-indent: 10px;
   }
 
-  div:last-child {
+  span:last-child {
     font-size: 9rem;
     line-height: 9rem;
     letter-spacing: 35px;

@@ -588,8 +588,10 @@ header .container {
     clear: both;
     display: block; }
   .large-nav ul > li {
-    display: inline-block;
     margin-right: 12px; }
+    @media screen and (min-width: 58.75em) {
+      .large-nav ul > li {
+        display: inline-block; } }
   .large-nav .tickets, .large-nav .social {
     display: inline-block; }
   .large-nav .social {
@@ -652,15 +654,17 @@ header .container {
   font-weight: 400;
   color: inherit;
   margin-top: 3rem; }
-  .title div:first-child {
+  .title span {
+    display: block; }
+  .title span:first-child {
     font-size: 1.2rem;
     margin-bottom: 1rem; }
-  .title div:nth-child(2) {
+  .title span:nth-child(2) {
     font-size: 4rem;
     line-height: 4rem;
     letter-spacing: 10px;
     text-indent: 10px; }
-  .title div:last-child {
+  .title span:last-child {
     font-size: 9rem;
     line-height: 9rem;
     letter-spacing: 35px;
@@ -710,5 +714,25 @@ header .container {
   #sub-trailer .tickets:hover {
     background: maroon;
     transition: all 0.2s ease-in-out; }
+
+@media screen and (min-width: 40em) {
+  #synopsis article {
+    float: left;
+    width: 66.66667%;
+    margin-left: 16.66667%; } }
+
+#credits .role {
+  float: left;
+  width: 41.66667%;
+  text-align: right;
+  font-family: "Teko", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 0; }
+#credits .person {
+  float: left;
+  width: 50%;
+  margin-left: 8.33333%;
+  margin-top: 0; }
 
 /*# sourceMappingURL=main.css.map */

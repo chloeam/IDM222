@@ -3,3 +3,8 @@
   $percentage: (100% / 12) * $columns;
   width: $percentage;
 }
+
+// Adjust left margin of column(s) to "skip" some
+@mixin push($columns) {
+  margin-left: (100% / 12) * $columns;
+}
