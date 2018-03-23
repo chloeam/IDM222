@@ -46,6 +46,9 @@
     text-align: center;
 
     @include larger-than(break-s) {
+      margin-top: 3rem;
+    }
+    @include larger-than(break-m) {
       margin-top: 6rem;
     }
   }

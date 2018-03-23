@@ -408,7 +408,13 @@ body {
   overflow-x: hidden; }
 
 section {
-  margin-top: 6rem; }
+  margin-top: 2rem; }
+  @media screen and (min-width: 58.75em) {
+    section {
+      margin-top: 4rem; } }
+  @media screen and (min-width: 64em) {
+    section {
+      margin-top: 6rem; } }
 
 @media screen and (min-width: 0em) {
   .container {
@@ -506,7 +512,8 @@ header {
   background-image: url(../img/hero-try.jpg);
   background-size: cover;
   background-position: center;
-  padding-top: 2rem; }
+  padding-top: 2rem;
+  position: relative; }
   header .tickets {
     font-family: "Teko", sans-serif;
     text-transform: uppercase;
@@ -532,6 +539,10 @@ header {
   @media screen and (min-width: 64em) {
     header {
       height: 100vh; } }
+  @media screen and (min-width: 30em) and (orientation: portrait) {
+    header {
+      height: 50vh;
+      background-attachment: scroll; } }
 
 header .container {
   max-width: 90%; }
@@ -632,8 +643,10 @@ header .container {
   text-align: center; }
   @media screen and (min-width: 58.75em) {
     .info-block {
-      margin-left: 50%;
-      margin-top: 3rem; } }
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-40%); } }
 
 .endorsement {
   display: none; }
@@ -672,8 +685,11 @@ header .container {
   .title span:last-child {
     font-size: 9rem;
     line-height: 9rem;
-    letter-spacing: 35px;
+    letter-spacing: 25px;
     text-indent: 35px; }
+    @media screen and (min-width: 58.75em) {
+      .title span:last-child {
+        letter-spacing: 35px; } }
 
 #sub-trailer .review-block {
   display: none;
@@ -708,6 +724,9 @@ header .container {
   text-align: center; }
   @media screen and (min-width: 40em) {
     #sub-trailer .button-container {
+      margin-top: 3rem; } }
+  @media screen and (min-width: 58.75em) {
+    #sub-trailer .button-container {
       margin-top: 6rem; } }
 #sub-trailer .tickets {
   background: #b30000;
@@ -724,52 +743,109 @@ header .container {
   #synopsis article {
     float: left;
     width: 66.66667%;
-    margin-left: 16.66667%; } }
+    margin-left: 16.66667%;
+    margin-top: 2rem;
+    margin-bottom: 2rem; } }
+@media screen and (min-width: 58.75em) {
+  #synopsis article {
+    margin-top: 0;
+    margin-bottom: 0; } }
 
-#credits .role {
-  float: left;
-  width: 41.66667%;
-  text-align: right;
-  font-family: "Teko", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-top: 0; }
-#credits .person {
-  float: left;
-  width: 50%;
-  margin-left: 8.33333%;
-  margin-top: 0; }
+#credits {
+  line-height: 1.5rem; }
+  #credits .pair {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto; }
+    #credits .pair::after {
+      content: "";
+      clear: both;
+      display: block; }
+  #credits .role {
+    float: left;
+    width: 41.66667%;
+    text-align: right;
+    font-family: "Teko", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 0; }
+  #credits .person {
+    float: left;
+    width: 50%;
+    margin-left: 8.33333%;
+    margin-top: 0; }
 
+@media screen and (min-width: 64em) {
+  #reviews {
+    margin-top: 1rem; } }
 #reviews .review {
-  float: left;
-  width: 33.33333%;
-  padding: 2rem;
-  font-size: 0.8rem;
-  line-height: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
   /* Firefox, other Gecko */
   box-sizing: border-box;
   /* Opera/IE 8+ */ }
+  @media screen and (min-width: 40em) {
+    #reviews .review {
+      float: left;
+      width: 33.33333%;
+      padding: 2rem;
+      font-size: 0.8rem;
+      line-height: 1.2rem; } }
 #reviews .attribution {
   font-size: 0.5em;
   letter-spacing: 2px;
   line-height: 1rem; }
 
 footer {
-  background: #b30000; }
+  background: #b30000;
+  padding: 2rem;
+  padding-bottom: 3rem;
+  text-align: center; }
+  footer .social {
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */ }
+    footer .social li {
+      display: inline;
+      padding: 0 1rem; }
+    @media screen and (min-width: 58.75em) {
+      footer .social {
+        float: left;
+        width: 50%;
+        text-align: left;
+        line-height: 2rem;
+        margin-top: 1.3rem; } }
   footer .tickets {
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
     background: #fff;
+    margin-top: 1rem;
     padding: 5px 30px;
     border-radius: 30px;
     font-family: "Teko", sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #b30000; }
+    @media screen and (min-width: 58.75em) {
+      footer .tickets {
+        float: left;
+        width: 50%;
+        max-width: 20rem;
+        line-height: 2rem; } }
     footer .tickets:hover {
       color: #fff;
       background: #b30000;
-      transition: all 200ms ease-in-out; }
+      transition: all 0.2s ease-in-out; }
 
 /*# sourceMappingURL=main.css.map */

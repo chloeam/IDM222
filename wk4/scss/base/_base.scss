@@ -5,7 +5,15 @@ body {
 }
 
 section {
-  margin-top: 6rem;
+  margin-top: 2rem;
+
+  @include larger-than(break-m) {
+    margin-top: 4rem;
+  }
+
+  @include larger-than(break-l) {
+    margin-top: 6rem;
+  }
 }
 
 .container {

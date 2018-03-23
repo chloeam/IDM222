@@ -4,6 +4,7 @@ header {
   background-size: cover;
   background-position: center;
   padding-top: 2rem;
+  position: relative;
 
   .tickets {
     @include classy-text;
@@ -33,6 +34,11 @@ header {
 
   @include larger-than(break-l) {
     height: 100vh;
+  }
+
+  @media screen and (min-width: 30em) and (orientation: portrait) {
+    height: 50vh;
+    background-attachment: scroll;
   }
 }
 
@@ -185,8 +191,12 @@ header .container {
   text-align: center;
 
   @include larger-than($header-breakpoint) {
-    margin-left: 50%;
-    margin-top: 3rem;
+    // margin-left: 50%;
+    // margin-top: 3rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-40%);
   }
 }
 
@@ -241,8 +251,12 @@ header .container {
   span:last-child {
     font-size: 9rem;
     line-height: 9rem;
-    letter-spacing: 35px;
+    letter-spacing: 25px;
     // fix weird bug where letter spacing makes text off-center
     text-indent: 35px;
+
+    @include larger-than(break-m) {
+      letter-spacing: 35px;
+    }
   }
 }

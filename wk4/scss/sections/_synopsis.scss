@@ -3,6 +3,13 @@
     @include larger-than(break-s) {
       @include span-columns(8);
       @include push(2);
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    @include larger-than(break-m) {
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }
