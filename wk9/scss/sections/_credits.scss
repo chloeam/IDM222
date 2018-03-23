@@ -1,0 +1,20 @@
+#credits {
+  line-height: 1.5rem;
+
+  .pair {
+    @include clearfix();
+  }
+
+  .role {
+    @include span-columns(5);
+    text-align: right;
+    @include classy-text;
+    margin-top: 0;
+  }
+
+  .person {
+    @include span-columns(6);
+    @include push(1);
+    margin-top: 0;
+  }
+}

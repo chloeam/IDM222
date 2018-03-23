@@ -1,0 +1,23 @@
+html {
+  @include root-size;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: $body-type;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-type;
+  font-weight: $heading-weight;
+  color: $heading-color;
+  line-height: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.attribution {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
