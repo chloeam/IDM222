@@ -512,7 +512,7 @@ header {
   background-image: url(../img/hero-try.jpg);
   background-size: cover;
   background-position: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   position: relative; }
   header .tickets {
     font-family: "Teko", sans-serif;
@@ -523,7 +523,17 @@ header {
     color: #fff;
     border: 2px solid #fff;
     padding: 5px 30px;
-    border-radius: 30px; }
+    border-radius: 30px;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    max-width: 200px;
+    text-align: center;
+    float: left;
+    width: 83.33333%; }
     header .tickets:hover {
       background-color: #fff;
       color: #494949;
@@ -547,24 +557,24 @@ header {
 header .container {
   max-width: 90%; }
 
-.compact-nav {
-  overflow: auto; }
-  .compact-nav::after {
-    content: "";
-    clear: both;
-    display: block; }
-  .compact-nav a {
-    float: right; }
-  @media screen and (min-width: 58.75em) {
-    .compact-nav {
-      display: none; } }
+.compact-nav::after {
+  content: "";
+  clear: both;
+  display: block; }
+@media screen and (min-width: 58.75em) {
+  .compact-nav {
+    display: none; } }
 
 #burger {
   position: relative;
+  float: left;
+  width: 8.33333%;
+  float: right;
   max-width: 33px;
   height: 14px;
   cursor: pointer;
-  z-index: 1000; }
+  z-index: 1000;
+  top: 1rem; }
   @media screen and (min-width: 58.75em) {
     #burger {
       display: none; } }
@@ -593,7 +603,18 @@ header .container {
     transition: all 0.2s ease-in-out; }
 
 .large-nav {
-  overflow: auto; }
+  overflow: auto;
+  text-align: right;
+  position: absolute;
+  right: 0.7rem;
+  top: 3rem; }
+  @media screen and (min-width: 40em) {
+    .large-nav {
+      right: 1.7rem;
+      top: 4rem; } }
+  @media screen and (min-width: 58.75em) {
+    .large-nav {
+      position: static; } }
   .large-nav::after {
     content: "";
     clear: both;
@@ -615,6 +636,15 @@ header .container {
 
 .nav-right {
   float: right; }
+  @media screen and (min-width: 58.75em) {
+    .nav-right {
+      width: 50%; } }
+  .nav-right .social {
+    margin-right: 1rem; }
+  .nav-right .social li a img {
+    vertical-align: middle; }
+  .nav-right .tickets {
+    float: none; }
 
 .large-nav > ul, .large-nav > div {
   display: none; }
@@ -805,6 +835,11 @@ footer {
   padding: 2rem;
   padding-bottom: 3rem;
   text-align: center; }
+  footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
   footer .social {
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
@@ -815,13 +850,10 @@ footer {
     footer .social li {
       display: inline;
       padding: 0 1rem; }
-    @media screen and (min-width: 58.75em) {
-      footer .social {
-        float: left;
-        width: 50%;
-        text-align: left;
-        line-height: 2rem;
-        margin-top: 1.3rem; } }
+      footer .social li img {
+        vertical-align: middle; }
+      footer .social li:first-child {
+        padding-left: 0; }
   footer .tickets {
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
@@ -830,19 +862,14 @@ footer {
     box-sizing: border-box;
     /* Opera/IE 8+ */
     background: #fff;
-    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     padding: 5px 30px;
     border-radius: 30px;
     font-family: "Teko", sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #b30000; }
-    @media screen and (min-width: 58.75em) {
-      footer .tickets {
-        float: left;
-        width: 50%;
-        max-width: 20rem;
-        line-height: 2rem; } }
     footer .tickets:hover {
       color: #fff;
       background: #b30000;

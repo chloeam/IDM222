@@ -7,9 +7,11 @@ function toggleBurger() {
 
   var burger = document.getElementById('burger');
   var menu = document.getElementById('menu');
+  var infoBlock = document.getElementById('info-block');
 
   burger.classList.toggle('is-open');
   menu.classList.toggle('is-visible');
+  infoBlock.style.opacity = infoBlock.style.opacity === '0.2' ? '' : '0.2';
 }
 
 // RESPONSIVE VIDEO

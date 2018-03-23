@@ -3,7 +3,7 @@ header {
   background-image: url(../img/hero-try.jpg);
   background-size: cover;
   background-position: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   position: relative;
 
   .tickets {
@@ -14,6 +14,10 @@ header {
     border: $default-line-width solid $button-text-color;
     padding: 5px 30px;
     border-radius: 30px;
+    @include box-sizing();
+    max-width: 200px;
+    text-align: center;
+    @include span-columns(10);
 
     &:hover {
       background-color: $white;
@@ -44,10 +48,16 @@ header {
 
 header .container {
   max-width: 90%;
+  // position: relative;
+  // overflow: hidden;
 }
 
 .compact-nav {
-  overflow: auto;
+  // overflow: auto;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  // position: relative;
 
   &::after {
     content: "";
@@ -55,9 +65,9 @@ header .container {
     display: block;
   }
 
-  a {
-    float: right;
-  }
+  // a {
+  //   float: right;
+  // }
 
   @include larger-than($header-breakpoint) {
     display: none;
@@ -66,11 +76,16 @@ header .container {
 
 #burger {
   position: relative;
+  // background: yellow;
+  // display: block;
+  @include span-columns(1);
+  // @include push(4);
+  float: right;
   max-width: 33px;
   height: 14px;
   cursor: pointer;
   z-index: 1000;
-  // top: 0.7rem; // magic number
+  top: 1rem;
 
   @include larger-than($header-breakpoint) {
     display: none;
@@ -118,6 +133,19 @@ header .container {
 
 .large-nav {
   overflow: auto;
+  text-align: right;
+  position: absolute;
+  right: 0.7rem;
+  top: 3rem;
+
+  @include larger-than(break-s) {
+    right: 1.7rem;
+    top: 4rem;
+  }
+
+  @include larger-than($header-breakpoint) {
+    position: static;
+  }
 
   &::after {
     content: "";
@@ -153,6 +181,25 @@ header .container {
 
 .nav-right {
   float: right;
+  // display: flex;
+  // align-items: stretch;
+  // justify-content: space-around;
+
+  @include larger-than($header-breakpoint) {
+    width: 50%;
+  }
+
+  .social {
+    margin-right: 1rem;
+  }
+
+  .social li a img {
+    vertical-align: middle;
+  }
+
+  .tickets {
+    float: none;
+  }
 }
 
 // have to target them separately for javascript reasons
@@ -189,6 +236,7 @@ header .container {
   margin-top: 5rem;
   color: $white;
   text-align: center;
+  // opacity: 0.1;
 
   @include larger-than($header-breakpoint) {
     // margin-left: 50%;
