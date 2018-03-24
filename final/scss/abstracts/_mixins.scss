@@ -1,0 +1,98 @@
+/**
+ * MIXINS
+ */
+
+// VARIABLES
+// Number of breakpoints
+$number-of-breakpoints: length($breakpoints);
+
+// Turning maps into lists
+$breaks: map-values($breakpoints);
+$break-names: map-keys($breakpoints);
+$roots: map-values($spreads);
+
+// px to em conversion
+@function em($px) {
+  @return ($px / 16) * 1em;
+}
+
+// MEDIA QUERIES
+
+@mixin larger-than($break) {
+  // retrieves value from map and converts to ems
+  $value: map-get($breakpoints, $break);
+  $value-in-ems: em($value);
+
+  // prints a media query based on the value
+  @media screen and (min-width: $value-in-ems) {
+    @content;
+  }
+}
+
+// SET CONTAINER WIDTHS
+
+$container-list: map-keys($container-widths);
+
+@mixin set-container() {
+  @for $i from 1 through $number-of-breakpoints {
+    $specific-width-value: map-get($container-widths, nth($container-list, $i));
+
+    @include larger-than(nth($break-names, $i)) {
+      max-width: $specific-width-value;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: auto;
+
+      &::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+    }
+  }
+}
+
+// SET RESPONSIVE ROOT FONT SIZE
+
+@mixin root-size {
+  // set for smallest screen size first
+  font-size: nth($roots, 1) / 16 * 100%;
+
+  // loop through breakpoints and set root size for each one
+  @for $i from 2 through $number-of-breakpoints {
+    @media screen and (min-width: nth($breaks, $i) / 16 * 1em) {
+      font-size: nth($roots, $i) / 16 * 100%;
+    }
+  }
+}
+
+// HELPERS
+
+@mixin classy-text {
+  font-family: $heading-type;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+@mixin no-list-style {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+@mixin clearfix {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+@mixin box-sizing {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}

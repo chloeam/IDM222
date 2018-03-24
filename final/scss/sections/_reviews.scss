@@ -1,0 +1,29 @@
+/**
+ * REVIEWS SECTION
+ */
+
+#reviews {
+  @include larger-than(break-l) {
+    margin-top: 1rem;
+  }
+
+  .review {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+    @include box-sizing();
+
+    @include larger-than(break-s) {
+      @include span-columns(4);
+      padding: 2rem;
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+    }
+  }
+
+  .attribution {
+    font-size: 0.5em;
+    letter-spacing: 2px;
+    line-height: 1rem;
+  }
+}

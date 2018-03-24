@@ -1,0 +1,52 @@
+/**
+ * FOOTER SECTION
+ */
+
+footer {
+  background: $primary-color;
+  padding: 2rem;
+  padding-bottom: 3rem;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social {
+    @include box-sizing();
+
+    li {
+      display: inline;
+      padding: 0 1rem;
+
+      img {
+        vertical-align: middle;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .tickets {
+    @include box-sizing();
+    background: $white;
+    // margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 5px 30px;
+    border-radius: 30px;
+    @include classy-text;
+    color: $primary-color;
+
+    &:hover {
+      color: $white;
+      background: $primary-color;
+      transition: $default-transition;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+/**
+ * SUB-TRAILER SECTION
+ */
+
+#sub-trailer {
+  .review-block {
+    display: none;
+    text-align: center;
+
+    @include larger-than(break-s) {
+      display: block;
+    }
+  }
+
+  .review {
+    &:first-child {
+      margin-bottom: 2rem;
+
+      @include larger-than(break-m) {
+        @include span-columns(4);
+      }
+    }
+
+    &:last-child {
+      @include larger-than(break-m) {
+        @include span-columns(8);
+      }
+    }
+  }
+
+  .quote {
+    font-size: 2rem;
+    line-height: 2.7rem;
+    margin: 0;
+
+    @include larger-than(break-l) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  .attribution {
+    font-size: .6rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    line-height: 1rem;
+  }
+
+  .button-container {
+    text-align: center;
+
+    @include larger-than(break-s) {
+      margin-top: 3rem;
+    }
+    @include larger-than(break-m) {
+      margin-top: 6rem;
+    }
+  }
+
+  .tickets {
+    background: $button-color;
+    color: $button-text-color;
+    @include classy-text;
+    padding: 15px 100px;
+
+    &:hover {
+      background: $button-hover-color;
+      transition: $default-transition;
+    }
+  }
+}

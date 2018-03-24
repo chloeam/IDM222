@@ -1,0 +1,69 @@
+/**
+ * VARIABLES
+ */
+
+// BREAKPOINTS
+// values in px for ease, but converted to ems in _mixins.scss
+$breakpoints: (
+  break-xs: 0,
+  break-s: 640,
+  break-m: 940,
+  break-l: 1024,
+  break-xl: 1600
+);
+
+// DEFAULT CONTAINER WIDTHS
+// The maximum widths of the main content at each breakpoint
+$container-widths: (
+  container-xs: 90%,
+  container-s: 85%,
+  container-m: 80%,
+  container-l: 75%,
+  container-xl: 70%
+);
+
+// VERTICAL RHYTHM
+// essentially setting font size and line-height, as well as vertical margins
+$spreads: (
+  spread-xs: 16,
+  spread-s: 16,
+  spread-m: 16,
+  spread-l: 18,
+  spread-xl: 20
+);
+
+// TYPOGRAPHY
+$body-type: 'Vollkorn', serif;
+$heading-type: 'Teko', sans-serif;
+$button-type: $heading-type;
+
+$heading-weight: 700;
+
+// OTHER
+
+// breakpoint at which header turns from hamburger toggle to "regular"
+$header-breakpoint: break-m;
+
+// default transition for buttons and such
+$default-transition: all 0.2s ease-in-out;
+
+// default line width in things like borders and hrs
+$default-line-width: 2px;
+
+// COLORS
+
+// basic colors
+$white: #fff;
+
+// site colors
+$primary-color: #b30000;
+
+// UI colors
+$background-color: #fcfcfc;
+$text-color: #494949;
+$heading-color: $text-color;
+$link-color: $primary-color;
+$hover-color: darken($primary-color, 10%);
+$button-color: $link-color;
+$button-hover-color: $hover-color;
+$button-text-color: $white;

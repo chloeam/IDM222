@@ -1,0 +1,293 @@
+/**
+ * HEADER SECTION
+ */
+
+header {
+  height: 400px;
+  background-image: url(../img/hero-try.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 1rem;
+  position: relative;
+
+  .tickets {
+    @include classy-text;
+    cursor: pointer;  // not sure why this is needed
+    font-size: 1.2rem;
+    color: $button-text-color;
+    border: $default-line-width solid $button-text-color;
+    padding: 5px 30px;
+    border-radius: 30px;
+    @include box-sizing();
+    max-width: 200px;
+    text-align: center;
+    @include span-columns(10);
+
+    &:hover {
+      background-color: $white;
+      color: $text-color;
+      transition: $default-transition;
+    }
+  }
+
+  @include larger-than($header-breakpoint) {
+    padding-top: 0;
+    background-attachment: fixed;
+  }
+
+  @include larger-than(break-m) {
+    height: 600px;
+    background-position: left bottom;
+  }
+
+  @include larger-than(break-l) {
+    height: 100vh;
+  }
+
+  @media screen and (min-width: 30em) and (orientation: portrait) {
+    height: 50vh;
+    background-attachment: scroll;
+  }
+}
+
+header .container {
+  max-width: 90%;
+}
+
+.compact-nav {
+
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  @include larger-than($header-breakpoint) {
+    display: none;
+  }
+}
+
+#burger {
+  position: relative;
+  @include span-columns(1);
+  float: right;
+  max-width: 33px;
+  height: 14px;
+  cursor: pointer;
+  z-index: 1000;
+  top: 1rem;
+
+  @include larger-than($header-breakpoint) {
+    display: none;
+  }
+
+  span {
+    background: $white;
+    height: $default-line-width;
+    width: 100%;
+    position: absolute;
+  }
+
+  span:first-child {
+    top: 0;
+    transition: $default-transition;
+  }
+
+  span:nth-child(2) {
+    top: 7px;
+    transition: $default-transition;
+  }
+
+  span:last-child {
+    top: 14px;
+    transition: $default-transition;
+  }
+
+  &.is-open {
+    span:first-child {
+      transform: translateY(7px) rotate(45deg);
+      transition: $default-transition;
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transition: $default-transition;
+    }
+
+    span:last-child {
+      transform: translateY(-7px) rotate(-45deg);
+      transition: $default-transition;
+    }
+  }
+}
+
+.large-nav {
+  overflow: auto;
+  text-align: right;
+  position: absolute;
+  right: 0.7rem;
+  top: 3rem;
+
+  @include larger-than(break-s) {
+    right: 1.7rem;
+    top: 4rem;
+  }
+
+  @include larger-than($header-breakpoint) {
+    position: static;
+  }
+
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  ul>li {
+    margin-right: 12px;
+
+    @include larger-than($header-breakpoint) {
+      display: inline-block;
+    }
+  }
+
+  .tickets, .social {
+    display: inline-block;
+  }
+
+  .social {
+    line-height: 56px;
+  }
+}
+
+.social a {
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.nav-right {
+  float: right;
+
+  @include larger-than($header-breakpoint) {
+    width: 50%;
+  }
+
+  .social {
+    margin-right: 1rem;
+  }
+
+  .social li a img {
+    vertical-align: middle;
+  }
+
+  .tickets {
+    float: none;
+  }
+}
+
+// have to target them separately for javascript reasons
+.large-nav>ul, .large-nav>div {
+  display: none;
+
+  @include larger-than($header-breakpoint) {
+    display: block;
+  }
+}
+
+#menu {
+  @include no-list-style;
+
+  li a {
+    color: $white;
+
+    &:hover {
+      border-bottom: $default-line-width solid $white;
+    }
+  }
+
+  @include larger-than($header-breakpoint) {
+    float: left;
+    line-height: 56px;
+  }
+}
+
+#menu.is-visible {
+  display: block;
+}
+
+.info-block {
+  margin-top: 5rem;
+  color: $white;
+  text-align: center;
+
+  @include larger-than($header-breakpoint) {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-40%);
+  }
+}
+
+.endorsement {
+  display: none;
+
+  @include larger-than($header-breakpoint) {
+    display: block;
+
+    .stars {
+      font-size: 1.8rem;
+      letter-spacing: 7px;
+      margin: 0;
+    }
+
+    .quote-mark {
+      font-size: 4rem;
+      line-height: 40px;
+    }
+
+    .attribution {
+      font-size: 0.1rem;
+      margin: 0;
+    }
+  }
+}
+
+.title {
+  @include classy-text;
+  line-height: 1rem;
+  font-weight: 400;
+  color: inherit;
+  margin-top: 3rem;
+
+  span {
+    display: block;
+  }
+
+  span:first-child {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  span:nth-child(2) {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: 10px;
+    // fix weird bug where letter spacing makes text off-center
+    text-indent: 10px;
+  }
+
+  span:last-child {
+    font-size: 9rem;
+    line-height: 9rem;
+    letter-spacing: 25px;
+    // fix weird bug where letter spacing makes text off-center
+    text-indent: 35px;
+
+    @include larger-than(break-m) {
+      letter-spacing: 35px;
+    }
+  }
+}
